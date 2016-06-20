@@ -64,6 +64,7 @@ script:
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy
   - source activate test-environment
   - conda install -c ilastik vigra
+  - rm -f ${BASEDIR}/miniconda/envs/test-environment/lib/libstdc++.so.6
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9"; export CC="gcc-4.9"; fi
   - if [ "$CXX" = "clang++" ]; then export CXX=$BASEDIR/llvm-$LLVM_VERSION/bin/clang++; export CC=$BASEDIR/llvm-$LLVM_VERSION/bin/clang; fi
   - mkdir build
