@@ -72,7 +72,7 @@ script:
   - cmake -DCMAKE_INSTALL_PREFIX=`pwd`/install_dir ..
   - make VERBOSE=1
   - make install
-  - make test
+  - ctest --verbose
 
 after_failure:
   - cat build/config.log
