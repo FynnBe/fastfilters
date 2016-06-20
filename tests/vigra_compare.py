@@ -6,8 +6,6 @@ try:
 	import vigra
 except ImportError:
 	print("WARNING: vigra not available - skipping tests.")
-	with open(sys.argv[1], 'w') as f:
-		f.write('')
 	exit()
 
 a = np.random.randn(1000000).reshape(1000,1000).astype(np.float32)[:,:900]
